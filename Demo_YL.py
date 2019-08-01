@@ -27,6 +27,7 @@ class BaiduTest(unittest.TestCase):
         driver.find_element_by_id("kw").send_keys("selenium ide")
         driver.find_element_by_id("su").click()
         time.sleep(5)
+    #is_element_present函数用来查找页面元素是否存在
     def is_element_present(self, how, what):
         try:
             self.driver.find_element(by=how, value=what)
@@ -42,7 +43,7 @@ def is_alert_present(self):
         return False
     return True
 
-
+# 对弹窗异常的处理
 def close_alert_and_get_its_text(self):
     try:
         alert = self.driver.switch_to_alert()
